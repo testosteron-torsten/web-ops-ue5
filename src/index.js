@@ -1,3 +1,7 @@
+import join from 'lodash/join';
+import "./scss/style.scss";
+import jpg from "./images/bild.jpg";
+
 function component() {
   const element = document.createElement("div");
 
@@ -7,9 +11,15 @@ function component() {
   return element;
 }
 
-document.body.appendChild(component());
+function image(source){
+  const image = new Image();
+  image.src = source;
+  image.width = 500;
 
-import join from 'lodash/join';
-import "./scss/style.scss";
-import jpg from "./images/bild.jpg";
+  return image;
+}
+document.body.appendChild(component());
+document.body.appendChild(image(jpg));
+
+
 
